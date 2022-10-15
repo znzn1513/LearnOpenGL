@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+*.*
+
+!*.sln
+!*.vcxproj
+!*.vcxproj.filters
+!*.vcxproj.user
+!*.c
+!*.cpp
+!*.h
+!*.dll
+!*.lib
+
