@@ -96,16 +96,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\znzn1\source\repos\LearnOpenGl\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\znzn1\source\repos\LearnOpenGl\Lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\znzn1\source\repos\LearnOpenGl\Source;$(SourcePath)</SourcePath>
+    <IncludePath>.\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\Lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\Source;$(SourcePath)</SourcePath>
     <ReferencePath>$(VC_ReferencesPath_x64)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\znzn1\source\repos\LearnOpenGl\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\znzn1\source\repos\LearnOpenGl\Lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Users\znzn1\source\repos\LearnOpenGl\Source;$(SourcePath)</SourcePath>
+    <IncludePath>.\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\Lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\Source;$(SourcePath)</SourcePath>
     <ReferencePath>$(VC_ReferencesPath_x64)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
