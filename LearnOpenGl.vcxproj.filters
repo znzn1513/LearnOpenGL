@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Include\LearnOpenGl.cpp">
+    <ClCompile Include="Include\glad.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Include\glad.c">
+    <ClCompile Include="Source\LearnOpenGl.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

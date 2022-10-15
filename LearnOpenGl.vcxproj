@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Include\glad.c" />
-    <ClCompile Include="Include\LearnOpenGl.cpp" />
+    <ClCompile Include="Source\LearnOpenGl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\glfw3.dll" />
