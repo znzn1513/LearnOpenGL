@@ -95,12 +95,16 @@ int main()
 	glEnableVertexAttribArray(2);
 
 
+	// OpenGL에 맞게 v 반전
+	stbi_set_flip_vertically_on_load(true);
+
 	// Generate Texture
-	unsigned int texture;
-	glGenTextures(1, &texture);
+	unsigned int containerTexture;
+	glGenTextures(1, &containerTexture);
 
 	// BindTexture
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, containerTexture);
 
 	// Texture Wrapping
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
@@ -125,15 +129,54 @@ int main()
 	}
 	stbi_image_free(data);
 
+	unsigned int faceTexture;
+	glGenTextures(1, &faceTexture);
+
+	// BindTexture
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, faceTexture);
+
+	// Texture Wrapping
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+	// Texture Filtering
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	// Image Load
+	data = stbi_load("Resource/Texture/awesomeface.png", &width, &height, &nrChannels, 0);
+	if (data)
+	{
+		// Input Image
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	else
+	{
+		std::cout << "Failed to load texture" << std::endl;
+	}
+	stbi_image_free(data);
+
+	shader.use(); // don't forget to activate the shader before setting uniforms!  
+	glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // set it manually
+	shader.setInt("texture2", 1); // or with shader class
+
 	while (!glfwWindowShouldClose(window))
 	{
 		processInput(window);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		glBindTexture(GL_TEXTURE_2D, texture);
 		
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, containerTexture);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, faceTexture);
+
 		shader.use();
+		//glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // set it manually
+		//shader.setInt("texture2", 1); // or with shader class
+
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		//glBindVertexArray(0);
