@@ -21,6 +21,9 @@
     <ClCompile Include="Source\LearnOpenGl.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Private\Shader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\glfw3.dll" />
@@ -41,6 +44,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Include\KHR\khrplatform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Public\Shader.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

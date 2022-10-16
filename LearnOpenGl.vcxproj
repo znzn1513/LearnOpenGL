@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Include\glad.c" />
     <ClCompile Include="Source\LearnOpenGl.cpp" />
+    <ClCompile Include="Source\Private\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\glfw3.dll" />
@@ -35,6 +36,7 @@
     <ClInclude Include="Include\GLFW\glfw3.h" />
     <ClInclude Include="Include\GLFW\glfw3native.h" />
     <ClInclude Include="Include\KHR\khrplatform.h" />
+    <ClInclude Include="Source\Public\Shader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -98,14 +100,14 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>.\Include;$(IncludePath)</IncludePath>
     <LibraryPath>.\Lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>.\Source;$(SourcePath)</SourcePath>
+    <SourcePath>.\Source;.\Source\Public;.\Source\Private;$(SourcePath)</SourcePath>
     <ReferencePath>$(VC_ReferencesPath_x64)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>.\Include;$(IncludePath)</IncludePath>
     <LibraryPath>.\Lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>.\Source;$(SourcePath)</SourcePath>
+    <SourcePath>.\Source;.\Source\Public;.\Source\Private;$(SourcePath)</SourcePath>
     <ReferencePath>$(VC_ReferencesPath_x64)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
