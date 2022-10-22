@@ -49,3 +49,5 @@
 !*.txt
 !*.docx
 !*.png
+!*.hpp
+!*.inl
