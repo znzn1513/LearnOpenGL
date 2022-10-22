@@ -32,6 +32,7 @@
 *.app
 
 *.*
+.\x64\*
 
 !*.sln
 !*.vcxproj
@@ -46,3 +47,4 @@
 !*.fs
 !*.jpg
 !*.txt
+!*.docx
